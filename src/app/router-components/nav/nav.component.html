@@ -1,0 +1,23 @@
+<div class="background-overlay"> 
+  <nav class="nav">
+      <div class="nav__sidebar-button" (click) = "this.openSidebar()">
+        <i class="pi pi-align-justify"></i>
+      </div>
+      <div class="nav__icons">
+        <a *ngFor="let icon of this.navIcons" class="nav__icon">
+          <i [class]="'pi ' + icon.name"></i>
+        </a>
+      </div>
+      <div class="nav__items">
+        <div class="nav__item" *ngFor="let item of navItems" (click)="this.navigateToRoute(item.routerLink)">
+            <p class="nav__text">{{item.name}}</p>
+        </div>
+      </div>
+      
+  </nav>
+  <div class="router-outlet">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<app-sidebar [(visibility)]="this.sidebarVisibility" [items]="this.navItems" [icons]="this.navIcons"></app-sidebar>

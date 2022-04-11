@@ -1,0 +1,128 @@
+@import "../../colors.scss";
+
+:host{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-image: url("../../../assets/img/monitor-1307227_1920.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.background-overlay{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: rgba(black, 0.5);
+} 
+
+.nav{
+  height: 70px;
+  // max-height: 20vh;
+  background-color: rgba(black, 0.2);
+  box-shadow: 0 0px 6px 2px black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  // padding: 0 20px 0 0px;
+
+  &__items{
+    padding-right: 20px;
+  }
+
+  &__item{
+    color: white;
+    margin-right: 30px;
+    padding: 15px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition-duration: 200ms;
+    border-radius: 10px;
+    font-size: 17px;
+    text-align: center;
+    white-space: nowrap;
+
+    @include nav-hover-effect();
+  }
+
+&__icons{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 25px;
+}
+
+&__icon{
+    color: white;
+    margin-left: 25px;
+    padding: 15px;
+
+    @include nav-icon-effect();
+  }
+
+  &__items{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  &__sidebar-button{
+    padding: 10px;
+    margin-left: 25px;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    display: none;
+
+    & .pi{
+      font-size: 35px;
+      position: relative;
+
+      &::after{
+        position: absolute;
+        content: '';
+        top: 50%;
+        left: 20%;
+        width: 60%;
+        transition-duration: 200ms;
+      }
+    }
+
+    &:hover .pi::after{
+      box-shadow: 0 0 1em 0.4em $box-shadow-2;
+    }
+  }
+}
+
+.router-outlet{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+@media only screen and(max-width: 800px){
+  .nav{
+    &__items{
+      display: none;
+    }
+
+    &__icons{
+      justify-content: flex-end;
+      flex: 1;
+    }
+
+    &__sidebar-button{
+      display: flex;
+    }
+  }
+}
+
+@media only screen and(max-width: 300px){
+  .nav{
+    &__icons{
+      display: none;
+    }
+  }
+}

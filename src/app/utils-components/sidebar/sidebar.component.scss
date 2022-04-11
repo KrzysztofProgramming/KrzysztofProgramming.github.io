@@ -1,0 +1,78 @@
+@import "../../colors.scss";
+
+.sidebar{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  height: 100vh;
+  overflow: auto;
+  max-width: 100%;
+  width: 300px;
+  top: 0;
+  left: 0;
+  background-color: rgba(rgb(22, 36, 49), 0.8);
+  box-shadow: 5px 0 3px -2px black;
+}
+
+.top-bar{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px;
+
+  & .pi{
+    font-size: 25px;
+    padding: 5px;
+    position: relative;
+    cursor: pointer;
+
+    &::after{
+      content: '';
+      position: absolute;
+      width: 60%;
+      top: 50%;
+      left: 20%;
+      transition-duration: 200ms;
+    }
+
+    &:hover::after{
+      box-shadow: 0 0 20px 7px $box-shadow-1;
+    }
+  }
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+
+  &__item{
+    @include nav-hover-effect();
+    font-size: 20px;
+    white-space: nowrap;
+    margin-top: 25px;
+
+    &:first-child{
+      margin-top: 0;
+    }
+  }
+}
+
+.bottom-bar{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 100px;
+  padding-bottom: max(10%, 20px);
+
+  &__icon{
+    @include nav-icon-effect(40px);
+  }
+}
