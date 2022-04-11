@@ -1,1 +1,1 @@
-export const skipLocationChange = false;
+export const skipLocationChange = true;
