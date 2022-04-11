@@ -42,11 +42,11 @@ export class NavComponent implements OnInit {
       link: 'https://github.com/KrzysztofProgramming',
       title: "Github"
     },
-    {
-      name: "pi-linkedin",
-      link: 'https://linkedIn.com',
-      title: "LinkedIn"
-    }
+    // {
+    //   name: "pi-linkedin",
+    //   link: 'https://linkedIn.com',
+    //   title: "LinkedIn"
+    // }
   ]
 
   public sidebarVisibility: boolean = false;

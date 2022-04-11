@@ -32,6 +32,6 @@ $box-shadow-2: #bfeeff;
     & .pi{
       font-size: $font-size;
       transition-duration: 150ms;
-      border-radius: 10px;
+      border-radius: $font-size / 2;
     }
 }

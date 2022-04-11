@@ -22,3 +22,20 @@ a{
   color: unset;
   text-decoration: none;
 }
+
+::-webkit-scrollbar {
+  width: 0.8vw; 
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(black, 0.6);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(46, 46, 46);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(56, 56, 56);
+}
