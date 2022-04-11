@@ -17,7 +17,7 @@
   margin-left: 10%;
   display: flex;
   flex-direction: column;
-  padding: 30px;
+  padding: min(30px, 10%);
   border-radius: 5px;
   background-color: rgba(black, 0.6);
   box-shadow: 0 0 3px 1px white;
@@ -35,32 +35,13 @@
   padding-bottom: 20px;
   margin-bottom: 20px;
   border-bottom: 1.5px solid white;
-  // border-radius: 2px;
-  // box-shadow: 0px -6px 4px -5px white inset, 0 0 2px 1px white;
+  line-height: 1.5em;
 
   &__email-value{
-    // text-decoration: underline;
     word-wrap: break-word;
     font-style: italic;
     position: relative;
-
-
     @include nav-hover-effect(95%);
-
-    // &::before{
-    //   content: '';
-    //   width: 1px;
-    //   height: 1px;
-    //   position: absolute;
-    //   top: 50%;
-    //   left: 0;
-    // }
-
-    // &:hover::before{
-    //   animation-name: starAnimation;
-    //   animation-duration: 500ms;
-    //   animation-iteration-count: 1;
-    // }
   }
 }
 
@@ -82,15 +63,7 @@
     }
   }
 }
-
-@keyframes starAnimation{
-  0%   {box-shadow: 0 0 2px 2px white;}
-  50%  {box-shadow: 0 0 7px 5px white; left: 100%}
-  80% {box-shadow: 0 0 10px 8px white; left: 100%}
-  100% {box-shadow: 0 0 2px 2px white; left: 100%}
-}
-
-@media only screen and(max-width: 750px){
+@media only screen and(max-width: 860px){
   .container{
     width: 95%;
     align-self: center;

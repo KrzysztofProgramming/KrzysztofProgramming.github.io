@@ -1,6 +1,8 @@
+import { skipLocationChange } from './../../globals';
 import { NavItem, NavIcon } from './../../router-components/nav/nav.component';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, HostBinding, Input, OnInit, Output } from '@angular/core';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -40,7 +42,7 @@ export class SidebarComponent implements OnInit {
     return this._visibility;
   }
 
-  constructor(private cd: ChangeDetectorRef) { }
+  constructor(private cd: ChangeDetectorRef, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -48,6 +50,11 @@ export class SidebarComponent implements OnInit {
 
   public hideSidebar(){
     this.visibility = false;
+  }
+
+  public navigateToLink(link?: string){
+    if(!link) return;
+    this.router.navigate([link], {skipLocationChange: skipLocationChange});
   }
 
 }

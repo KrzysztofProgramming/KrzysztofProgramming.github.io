@@ -3,7 +3,7 @@
     <i class="pi pi-times" (click)="this.hideSidebar()"></i>
   </div>
   <div class="content">
-    <div class="content__item" *ngFor="let item of this.navItems">
+    <div class="content__item" *ngFor="let item of this.navItems" (click) = "this.navigateToLink(item.routerLink)">
       <p>{{item.name}}</p>
     </div>
   </div>
