@@ -41,7 +41,7 @@
     word-wrap: break-word;
     font-style: italic;
     position: relative;
-    @include nav-hover-effect(95%);
+    text-decoration: underline;
   }
 }
 
