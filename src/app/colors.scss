@@ -1,7 +1,7 @@
 $box-shadow-1: #a8ebff;
 $box-shadow-2: #bfeeff;
 
-@mixin nav-hover-effect() {
+@mixin nav-hover-effect($width: 60%) {
 
   cursor: pointer;
   position: relative;
@@ -9,10 +9,10 @@ $box-shadow-2: #bfeeff;
   &:after{
     content: '';
     position: absolute;
-    width: 60%;
+    width: $width;
     top: 50%;
-    left: 20%;
-    transition-duration: 200ms;
+    left: calc((100% - $width) / 2);
+    transition-duration: 150ms;
     // transform: scale(0.5);
   }
 
@@ -31,7 +31,7 @@ $box-shadow-2: #bfeeff;
 
     & .pi{
       font-size: $font-size;
-      transition-duration: 200ms;
+      transition-duration: 150ms;
       border-radius: 10px;
     }
 }

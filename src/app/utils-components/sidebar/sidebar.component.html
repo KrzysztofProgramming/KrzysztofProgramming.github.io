@@ -8,7 +8,7 @@
     </div>
   </div>
   <div class="bottom-bar">
-    <a class="bottom-bar__icon" *ngFor="let icon of this.navIcons" [href]="icon.link">
+    <a class="bottom-bar__icon" *ngFor="let icon of this.navIcons" [href]="icon.link" [title]="icon.title" target="_blank">
       <i [class]="'pi ' + icon.name"></i>
     </a>
   </div>

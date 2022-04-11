@@ -4,7 +4,7 @@
         <i class="pi pi-align-justify"></i>
       </div>
       <div class="nav__icons">
-        <a *ngFor="let icon of this.navIcons" class="nav__icon">
+        <a *ngFor="let icon of this.navIcons" class="nav__icon" [title]="icon.title" [href]="icon.link" target="_blank">
           <i [class]="'pi ' + icon.name"></i>
         </a>
       </div>

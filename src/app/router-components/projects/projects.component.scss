@@ -1,0 +1,76 @@
+:host{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 10px;
+}
+
+$radius: 40px;
+
+.tile{
+  display: flex;
+  flex-direction: row;
+
+  min-height: 220px;
+  border-radius: $radius;
+  box-shadow: 0 2px 1px black;
+  width: clamp(70%, 900px, calc(100% - min(30px, 1.5%)));
+  margin-left: min(30px, 1.5%);
+  transition-duration: 200ms;
+  margin-top: 30px;
+  cursor: pointer;
+
+  &:hover{
+    z-index: 2;
+    box-shadow: 0 0 2px 1px white;
+    transform: scale(1.02);
+  }
+
+  &__title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: $radius 0 0 $radius;
+    flex: 1;
+    background-color: rgba(58, 114, 182, 0.75);
+    padding: 10px;
+    font-size: 24px;
+  }
+
+  &__description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 0 $radius $radius 0;
+    flex: 4;
+    background-color: rgba(black, 0.7);
+    font-size: 20px;
+  }
+}
+
+.header{
+  font-size: min(40px, 10vw);
+  margin: 50px 0 15px 0;
+  border-bottom: 2px solid white;
+  padding-bottom: 7px;
+  padding-left: min(20px, 1%);
+}
+
+@media only screen and (max-width: 600px){
+  .tile{
+    flex-direction: column;
+    &__title{
+      width: 100%;
+      border-radius: $radius $radius 0 0;
+    }
+
+    &__description{
+      width: 100%;
+      border-radius: 0 0 $radius $radius;
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { skipLocationChange } from 'src/app/globals';
 
 export interface NavItem{
   name: string;
@@ -9,6 +10,7 @@ export interface NavItem{
 export interface NavIcon{
   name: string;
   link: string;
+  title: string;
 }
 
 @Component({
@@ -22,7 +24,7 @@ export class NavComponent implements OnInit {
   navItems: NavItem[] = [
     {
       name: "Home",
-      routerLink: ""
+      routerLink: "home"
     },
     {
       name: "Projects",
@@ -37,11 +39,13 @@ export class NavComponent implements OnInit {
   navIcons: NavIcon[] = [
     {
       name: "pi-github",
-      link: 'https://github.com'
+      link: 'https://github.com/KrzysztofProgramming',
+      title: "Github"
     },
     {
       name: "pi-linkedin",
-      link: 'https://linkedIn.com'
+      link: 'https://linkedIn.com',
+      title: "LinkedIn"
     }
   ]
 
@@ -54,7 +58,7 @@ export class NavComponent implements OnInit {
 
   public navigateToRoute(link?: string){
     if(!link) return;
-    this.router.navigate([link], {skipLocationChange: true});
+    this.router.navigate([link], {skipLocationChange: skipLocationChange});
   }
 
   public openSidebar(){
