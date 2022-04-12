@@ -32,6 +32,50 @@ $box-shadow-2: #bfeeff;
     & .pi{
       font-size: $font-size;
       transition-duration: 150ms;
-      border-radius: $font-size / 2;
+      border-radius: calc($font-size / 2 );
     }
+}
+
+@mixin button-effect {
+  cursor: pointer;
+  border-radius: 100px;
+  color: white;
+  outline: none;
+  border: none;
+  background-color: unset;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 0 3px 1px black, 0 0 2px 1px white inset;
+
+  &::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background-color: rgba(black, 0.6);
+    z-index: -2;
+  }
+
+  &::after{
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background-color: rgba(white, 0.25);
+    z-index: -1;
+    transition-duration: 250ms;
+  }
+
+  &:hover{
+    box-shadow: 0 0 4px 2px $box-shadow-1, 0 0 2px 1px $box-shadow-1 inset;
+  }
+
+  &:hover::after{
+    left: 0;
+  }
 }
