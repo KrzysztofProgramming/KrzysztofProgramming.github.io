@@ -39,7 +39,7 @@ export class NavComponent implements OnInit {
   navIcons: NavIcon[] = [
     {
       name: "pi-github",
-      link: 'https://github.com/KrzysztofProgramming',
+      link: 'https://github.com/KrzysztofProgramming?tab=repositories',
       title: "Github"
     },
     {
