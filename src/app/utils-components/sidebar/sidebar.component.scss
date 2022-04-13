@@ -25,7 +25,7 @@
   padding: 10px;
 
   & .pi{
-    font-size: 30px;
+    font-size: 27px;
     padding: 8px;
     position: relative;
     cursor: pointer;
@@ -53,9 +53,10 @@
 
   &__item{
     @include nav-hover-effect();
-    font-size: 27px;
+    font-size: 20px;
+    padding: 7px;
     white-space: nowrap;
-    margin-top: 30px;
+    margin-top: 15px;
 
     &:first-child{
       margin-top: 0;
