@@ -63,6 +63,17 @@
 
 }
 
+.about-me{
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1.5px solid white;
+  font-size: 19px;
+
+  & a{
+    text-decoration: underline;
+  }
+}
+
 .skills-header{
   font-size: 22px;
 }
